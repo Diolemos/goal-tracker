@@ -13,8 +13,8 @@ export default function GoalInput(props){
     }   
     return(
     <View style={styles.inputContainer} >
-    <TextInput style={styles.textInput} placeholder='Your studying goal'
-    onChangeText={goalInputHandler}/>
+    <TextInput style={styles.textInput} placeholder='Your studying goal' 
+    onChangeText={goalInputHandler} value={enteredGoalText} />
      <Button title="Add your goal!" onPress={addGoalHandler}/>
     </View>)
 }
