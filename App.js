@@ -15,6 +15,12 @@ export default function App() {
     ])
   };
 
+  function deleteItemHandler(id){
+    setUserGoals(previous=>{
+      return previous.filter(item=>item.key!== id)
+    })
+  }
+
   return (
     <View style={styles.appContainer} >
      
@@ -27,7 +33,8 @@ export default function App() {
      renderItem={(itemData) =>{
       
       return (
-        <GoalItem itemData={itemData.item.text}/>
+        <GoalItem itemData={itemData.item} onDeleteItem={deleteItemHandler}
+        id={itemData.item.key}/>
       )
      }} />
     
